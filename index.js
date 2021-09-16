@@ -1,9 +1,11 @@
+const express = reguire("express");
 const { Telegraf } = require('telegraf')
 const axios = require('axios')
 const regex = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/
 require("dotenv").config();
 const bot = new Telegraf(process.env.bot_api_key)
 
+const app = express();
 
 bot.start(async (ctx) => {
   ctx.replyWithHTML("<em>Hello There 👋, I am <b>URL Shortner Bot.</b> \nSend me any Big Url and I will give you it's <i>Shot Url.</i></em>\n\n <b>Press /help for more info.</b>\n\n<em>Owner @itsabdulkader</em>");
@@ -49,3 +51,7 @@ bot.on('message', async(ctx) => {
 
 
 bot.launch();
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT);
