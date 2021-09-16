@@ -1,0 +1,27 @@
+{
+    "name": "URL Shortener Telegram Bot",
+    "description": "A URL Shortener Telegram Bot",
+    "keywords": [
+      "telegram",
+      "bot",
+      "nodejs",
+      "url-shortner-bot"
+    ],
+    "repository": "https://github.com/iAbdulKader/url-shortner-bot.git",
+    "website": "akurls.ml",
+    "success_url": "https://akurls.ml",
+      "env": {
+      "bot_api_key": {
+        "description": "The telegram bot token that you get from @BotFather.",
+        "required": true
+      },
+      "api_url": {
+        "description": "Base url of Shortner App without trailing /",
+        "required": true
+      },
+      "api_key": {
+        "description": "API Key for Url Shortener",
+        "required": true
+      },
+    }
+}
