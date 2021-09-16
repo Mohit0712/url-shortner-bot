@@ -30,7 +30,7 @@ bot.on('message', async(ctx) => {
             .then(async function(response) {
                 var data = response.data;
                 if (!data.error) {
-                    ctx.replyWithHTML(`<em>✔️ Url Shortened Successfully shortened Url (Tap to Copy):</em> <code>${data.shortUrl}</code>`)
+                    ctx.replyWithHTML(`<em>✔️ Url Shortened Successfully shortened Url (Tap to Copy):</em>\n\n <code>${data.shortUrl}</code>`)
                     
                 } else if (data.error && data.error == "invalid link") {
                     ctx.replyWithHTML("<em>❗ You are sending an invalid link kindly recheck and send again with http:// or https://</em>")
