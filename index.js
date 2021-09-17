@@ -1,9 +1,18 @@
 const express = require("express");
-const { Telegraf } = require('telegraf')
-const axios = require('axios')
+const { Telegraf } = require('telegraf');
+const axios = require('axios');
+const { wakeDyno } = require('heroku-keep-awake');
 const regex = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
 require("dotenv").config();
 const bot = new Telegraf(process.env.bot_api_key)
+
+const DYNO_URL = process.env.base_url;
+const opts = {
+    interval: 25,
+    logging: false,
+    stopTimes: { start: '18:50', end: '02:00' }
+}
+
 
 const app = express();
 
@@ -67,4 +76,6 @@ bot.launch();
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT);
+app.listen(PORT, () => {
+  wakeDyno(DYNO_URL, opts);
+});

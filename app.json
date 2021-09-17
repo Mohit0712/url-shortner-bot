@@ -23,6 +23,11 @@
       "api_key": {
         "description": "API Key for Url Shortener",
         "required": true
+      },
+      "base_url": {
+        "description": "Base url of you bot to keep it alive. Without trailing /",
+        "value": "https://myapp.herokuapp.com",
+        "required": false
       }
     }
 }
