@@ -7,6 +7,10 @@ const bot = new Telegraf(process.env.bot_api_key)
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Bot Running")
+})
+
 bot.start(async (ctx) => {
   ctx.replyWithHTML("<em>Hello There 👋, I am <b>URL Shortner Bot.</b> \nSend me any Big Url and I will give you it's <i>Shot Url.</i></em>\n\n <b>Press /help for more info.</b>\n\n<em>Owner @itsabdulkader</em>");
 });
@@ -37,6 +41,7 @@ bot.on('message', async(ctx) => {
         axios(config)
             .then(async function(response) {
                 var data = response.data;
+                console.log(data)
                 if (!data.error) {
                     ctx.replyWithHTML(`<em>✔️ Url Shortened Successfully shortened Url (Tap to Copy):</em>\n\n <code>${data.shortUrl}</code>`)
                     
