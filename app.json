@@ -13,15 +13,15 @@
     "success_url": "https://akurls.ml",
       "env": {
       "bot_api_key": {
-        "description": "The telegram bot token that you get from @BotFather.",
+        "description": "6677598838:AAFYfpf7wyEy8wcSDOAwJxvoMMmzwchoq6E",
         "required": true
       },
       "api_url": {
-        "description": "Base url of Shortner App without trailing /",
+        "description": "https://earn4share.online/api",
         "required": true
       },
       "api_key": {
-        "description": "API Key for Url Shortener",
+        "description": "5d6505709fb29c5d45cd44c9fe75ba6c913252b8",
         "required": true
       },
       "base_url": {
