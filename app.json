@@ -25,7 +25,7 @@
         "required": true
       },
       "base_url": {
-        "description": "Base url of you bot to keep it alive. Without trailing /",
+        "description": "https://ihrfhf-cb20fe1ed56d.herokuapp.com",
         "value": "https://myapp.herokuapp.com",
         "required": false
       }
